@@ -9,8 +9,8 @@
       </p>
     </div>
     <div class="flex flex-row flex-wrap justify-center text-white gap-5 uppercase">
-      <router-link to="/mechanics" class="am-button p-2 px-4 text-2xl rounded-lg
-      border-double border-4 border-orange-300">
+      <router-link to="/mechanics" class="p-2 px-6 text-2xl rounded-lg
+      border-double border-4 border-started bg-started font-gotham font-bold">
         Get Started
       </router-link>
     </div>
@@ -28,20 +28,22 @@ export default {
 </script>
 
 <style scoped>
-  .am-button {
-    background: #6D3B00;
+  .bg-started {
+    background: #24397A;
   }
   .title {
     font-family: ChalkitUp;
-    font-weight: 500;
-    text-shadow:
-   -2px -2px 0 rgba(109, 59, 0, 1),
-    2px -2px 0 rgba(109, 59, 0, 1),
-    -2px 2px 0 rgba(109, 59, 0, 1),
-     2px 2px 0 rgba(109, 59, 0, 1);
+    font-weight: 300;
   }
   @font-face {
     font-family: ChalkitUp;
     src: url('../assets/font/chalkitup-title.ttf');
+  }
+  @font-face {
+    font-family: GothamMedium;
+    src: url('../assets/font/gotham-score.otf');
+  }
+  .font-gotham {
+    font-family: GothamMedium;
   }
 </style>

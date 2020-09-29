@@ -68,7 +68,7 @@
                 &nbsp;
                 </div>
             </div>
-            <div class="flex flex-col p-4 gap-1 flex-grow max-w-sm">
+            <div class="flex flex-col p-4 gap-1 flex-grow max-w-sm select-none">
                 <div id="startButton" @click="startGame"
                 class="py-4 text-center bg-alphacamp text-white font-gotham
                 text-4xl font-bold rounded-t-md shadow-inner border">
@@ -94,6 +94,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 const wrongClass = 'bg-red-600 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
 const correctClass = 'bg-green-600 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
 const hoveredClass = 'bg-yellow-500 h-16 w-16 mem-cell rounded-lg shadow-lg border-px border-mechanics';
@@ -167,15 +169,25 @@ export default {
     startTimer() {
       clearInterval(this.timer.instance);
       this.timer.time = 30;
-      this.timer.instance = setInterval(() => {
+      this.timer.instance = setInterval(async () => {
         this.timer.time -= 1;
         if (this.timer.time <= 0) {
           this.locked = true;
           clearInterval(this.timer.instance);
           this.$store.commit('setScore', this.score);
-          this.$router.push('/leaderboard');
+          this.sendScore(this.$store.highScore);
+          this.$router.push('/score');
         }
       }, 1000);
+    },
+    async sendScore(score) {
+      axios.post('https://alphacamp-wc-cme.com/api/get_user.php', {
+        uid: this.$store.state.userId,
+        game_id: 1,
+        score,
+      }).then((response) => {
+        console.log(response);
+      });
     },
     startGame() {
       // Set timer to 1 minute

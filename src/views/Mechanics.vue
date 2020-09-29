@@ -1,11 +1,9 @@
 <template>
     <div id="mechanics-mm" class="flex flex-col container mx-auto justify-center">
-        <h1 class="text-center text-6xl fuckthis
-        uppercase font-bold px-2 text-4xl md:text-6xl lg:text-6xl">
-          Mechanics
-        </h1>
-        <div class="bg-mechanics text-mechanics
-        border-4 border-mechanics flex flex-col mt-10">
+        <img src="../assets/img/MECHANICS.png"
+        class="mx-auto max-w-md mt-10 p-4 w-full"/>
+        <div class="bg-mechanics text-mechanics m-10
+        border-3 border-mechanics flex flex-col mt-10">
             <div class="flex flex-row flex-wrap justify-around items-center">
                 <div class="max-w-3xl p-10">
                     <p class="text-2xl font-medium pb-5">
