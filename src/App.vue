@@ -24,11 +24,19 @@ export default {
     background-image: url('./assets/svg/background.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: GothamMedium
   }
   #banner {
     background: linear-gradient(90deg, rgba(183, 129, 40, 0) 0%,
     rgba(183, 129, 40, 0.7) 23.45%, rgba(183, 129, 40, 0.9) 48.63%,
     rgba(183, 129, 40, 0.7) 75.29%, rgba(183, 129, 40, 0) 94.79%);
     backdrop-filter: blur(5px);
+  }
+  @font-face {
+    font-family: GothamMedium;
+    src: url('./assets/font/gotham-score.otf');
+  }
+  .font-gotham {
+      font-family: GothamMedium;
   }
 </style>

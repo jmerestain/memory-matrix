@@ -97,7 +97,7 @@
 import axios from 'axios';
 
 const wrongClass = 'bg-red-600 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
-const correctClass = 'bg-green-600 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
+const correctClass = 'bg-yellow-500 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
 const hoveredClass = 'bg-yellow-500 h-16 w-16 mem-cell rounded-lg shadow-lg border-px border-mechanics';
 const normalClass = 'bg-alphacamp h-16 w-16 mem-cell rounded-lg shadow-lg';
 
@@ -108,14 +108,14 @@ export default {
   data() {
     return {
       locked: true,
-      diffLevel: 6,
+      diffLevel: 3,
       correct: 0,
       board: [],
       answers: [],
       score: 0,
       errors: 0,
       timer: {
-        time: 30,
+        time: 60,
         instance: '',
       },
     };
@@ -153,9 +153,11 @@ export default {
       }
     },
     newRound() {
-      this.timer.time += 1;
       this.correct = 0;
       this.cleanBoard();
+      if (this.diffLevel < 10) {
+        this.diffLevel += 1;
+      }
       this.randomCellPick(this.diffLevel);
       this.displayCorrectAnswers();
     },
@@ -168,7 +170,7 @@ export default {
     },
     startTimer() {
       clearInterval(this.timer.instance);
-      this.timer.time = 30;
+      this.timer.time = 60;
       this.timer.instance = setInterval(async () => {
         this.timer.time -= 1;
         if (this.timer.time <= 0) {
