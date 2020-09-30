@@ -95,6 +95,7 @@
 
 <script>
 import axios from 'axios';
+import { gsap } from 'gsap';
 
 const wrongClass = 'bg-red-600 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
 const correctClass = 'bg-yellow-500 h-16 w-16 mem-cell cursor-not-allowed rounded-lg shadow-lg';
@@ -114,6 +115,7 @@ export default {
       answers: [],
       score: 0,
       errors: 0,
+      round: 1,
       timer: {
         time: 60,
         instance: '',
@@ -158,6 +160,20 @@ export default {
       if (this.diffLevel < 10) {
         this.diffLevel += 1;
       }
+      this.round += 1;
+      document.querySelector('#startButton').innerHTML = `Round: ${this.round}`;
+      gsap.to(document.querySelector('#startButton'), {
+        keyframes: [
+          {
+            duration: 0.3,
+            'background-color': '#ecc94b',
+          },
+          {
+            duration: 0.3,
+            'background-color': '#6D3B00',
+          },
+        ],
+      });
       this.randomCellPick(this.diffLevel);
       this.displayCorrectAnswers();
     },
@@ -169,7 +185,6 @@ export default {
       this.score -= subtracted;
     },
     startTimer() {
-      clearInterval(this.timer.instance);
       this.timer.time = 60;
       this.timer.instance = setInterval(async () => {
         this.timer.time -= 1;
@@ -192,14 +207,15 @@ export default {
       });
     },
     startGame() {
-      // Set timer to 1 minute
-      // Start countdown
+      clearInterval(this.timer.instance);
+      this.$store.commit('setScore', 0);
       this.startTimer();
       this.score = 0;
       this.errors = 0;
       this.cleanBoard();
       this.randomCellPick(this.diffLevel);
       this.displayCorrectAnswers();
+      document.querySelector('#startButton').innerHTML = `Round: ${this.round}`;
     },
     cleanBoard() {
       let i = 0;
