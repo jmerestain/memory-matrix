@@ -71,7 +71,7 @@
             <div class="flex flex-col p-4 gap-1 flex-grow max-w-sm select-none">
                 <div id="startButton" @click="startGame"
                 class="py-4 text-center bg-alphacamp text-white font-gotham
-                text-4xl font-bold rounded-t-md shadow-inner border">
+                text-4xl font-bold rounded-t-md shadow-inner border uppercase">
                     Play Now
                 </div>
                 <div class="px-6 py-2 text-center bg-alphacamp text-yellow-400 font-gotham
