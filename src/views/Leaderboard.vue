@@ -19,11 +19,14 @@
                     justify-around items-center banner mx-auto p-2 select-none">
                         <p>Loading!</p>
                     </div>
+                    <p class="text-lg font-bold font-gotham text-mechanics text-center pt-3">
+                        Note: The <span class="text-first26">First 26</span> gets an Alpha Token
+                    </p>
                 </div>
                 <div class="flex flex-row justify-center mt-10">
                     <router-link to="/leaderboard" class="bg-started text-center
                     py-3 px-4 text-3xl text-white font-bold rounded-lg flex-grow max-w-xs
-                    font-bold select-none title">
+                    font-bold select-none title uppercase">
                         Next
                     </router-link>
                 </div>
@@ -94,5 +97,8 @@ export default {
     rgba(183, 129, 40, 0.7) 23.45%, rgba(183, 129, 40, 0.9) 48.63%,
     rgba(183, 129, 40, 0.7) 75.29%, rgba(183, 129, 40, 0) 94.79%);
     backdrop-filter: blur(5px);
+}
+.text-first26 {
+    color: #24397A;
 }
 </style>

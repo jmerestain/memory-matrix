@@ -9,14 +9,14 @@
             gap-2 mx-2">
                 <div class="border-mechanics px-1 py-1
                 max-w-sm rounded-lg w-48 flex-grow flex">
-                    <router-link to="/" class="bg-alphacamp text-white font-gotham
+                    <router-link to="/" class="mm-button text-white uppercase
                     text-xl px-3 py-2 rounded-md font-bold w-full text-center flex-grow">
                         Back to Home
                     </router-link>
                 </div>
                 <div class="border-mechanics px-1 py-1
                 max-w-sm rounded-lg w-48 flex-grow flex">
-                    <router-link to="/game" class="bg-alphacamp text-white font-gotham
+                    <router-link to="/game" class="mm-button text-white uppercase
                     text-xl px-3 py-2 rounded-md font-bold w-full text-center flex-grow">
                         Try Again
                     </router-link>
@@ -36,6 +36,10 @@ export default {
 .text-first26 {
   color: #24397A;
 }
+.mm-button {
+    background: #24397A;
+    font-family: ChalkitUp;
+  }
 .fuckthis {
     text-align: center;
     color: #FFFFFF;

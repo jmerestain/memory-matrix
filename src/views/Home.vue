@@ -10,7 +10,7 @@
     </div>
     <div class="flex flex-row flex-wrap justify-center text-white gap-5 uppercase">
       <router-link to="/mechanics" class="p-2 px-6 text-2xl rounded-lg
-      border-double border-4 border-started bg-started font-gotham font-bold">
+      border-double border-4 border-started bg-started title font-bold">
         Get Started
       </router-link>
     </div>

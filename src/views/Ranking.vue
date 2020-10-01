@@ -36,7 +36,7 @@
                 <div class="flex flex-row justify-center mt-10">
                     <router-link to="/ending" class="bg-started text-center
                     py-3 px-4 text-3xl text-white font-bold rounded-lg flex-grow max-w-xs
-                    font-bold select-none title">
+                    font-bold select-none title uppercase">
                         Next
                     </router-link>
                 </div>
