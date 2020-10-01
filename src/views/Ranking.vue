@@ -34,9 +34,9 @@
                     </p>
                 </div>
                 <div class="flex flex-row justify-center mt-10">
-                    <router-link to="/ending" class="bg-alphacamp font-gotham text-center
+                    <router-link to="/ending" class="bg-started text-center
                     py-3 px-4 text-3xl text-white font-bold rounded-lg flex-grow max-w-xs
-                    font-bold">
+                    font-bold select-none title">
                         Next
                     </router-link>
                 </div>

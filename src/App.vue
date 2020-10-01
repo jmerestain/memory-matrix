@@ -36,6 +36,10 @@ export default {
     font-family: GothamMedium;
     src: url('./assets/font/gotham-score.otf');
   }
+  @font-face {
+    font-family: ChalkitUp;
+    src: url('./assets/font/chalkitup-title.ttf');
+  }
   .font-gotham {
       font-family: GothamMedium;
   }

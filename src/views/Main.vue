@@ -170,7 +170,7 @@ export default {
           },
           {
             duration: 0.3,
-            'background-color': '#6D3B00',
+            'background-color': '#24397A',
           },
         ],
       });
@@ -209,6 +209,7 @@ export default {
     startGame() {
       clearInterval(this.timer.instance);
       this.$store.commit('setScore', 0);
+      this.round = 1;
       this.startTimer();
       this.score = 0;
       this.errors = 0;
@@ -267,5 +268,9 @@ export default {
   }
   #play {
       height: 3rem;
+  }
+  #startButton {
+    background: #24397A;
+    font-family: ChalkitUp;
   }
 </style>
