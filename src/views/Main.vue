@@ -198,7 +198,7 @@ export default {
       }, 1000);
     },
     async sendScore(score) {
-      axios.post('https://alphacamp-wc-cme.com/api/get_user.php', {
+      axios.post('https://beta.alphacamp-wc-cme.com/api/add_score.php', {
         uid: this.$store.state.userId,
         game_id: 1,
         score,
